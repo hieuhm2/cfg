@@ -1,0 +1,30 @@
+link tutorial: https://www.youtube.com/watch?v=tRZGeaHPoaw
+### config some information to known who's edit the files
+
+git config --global user.name "Minh-Hieu-Huynh" // specify the name
+git config --global user.email 22520434@gm.uit.edu.vn // specify the email
+
+#### set the default branch name
+git config --global init.default branch main
+
+### operator
+git init
+
+git status
+    // untrack: git won't care about this file
+    // track: git note what is the change i make for this file
+
+git add <filename> // to track the  files
+git rm --cached <filename> // to untrack the files
+
+git commit -m "the message that i want to display" // option -a to commit from workspace to commit without staging in the middle
+
+git diff // show the diff
+
+git restore --staged <filename> // to remove filename from staging back to working space
+
+### how to ignore the files or folders that I don't want to see
+1. Create a text file name ".gitignore"
+2. Append the file's name that I want to ignore
+
+

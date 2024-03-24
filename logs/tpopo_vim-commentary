@@ -1,0 +1,8 @@
+github https://github.com/tpope/vim-commentary
+
+1. gcc :  comment current line
+2. gc  : comment the target motion
+3. gcap: comment a par
+4. :7,17Commentary : comment from line 7 to 17
+5. :g/TODO/Commentary : comment lines contains that TODO
+6. gcgc : uncomment
