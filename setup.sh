@@ -64,10 +64,11 @@ tar xf lazygit.tar.gz lazygit
 sudo install lazygit -D -t /usr/local/bin/
 
 # install vi
-sudo add-apt-repository ppa:bamboo-engine/ibus-bamboo
-sudo apt update
-sudo apt install ibus-bamboo
-ibus restart
+sudo apt-get install ibus
+ibus-setup
+# ibus restart
+gsettings set org.gnome.desktop.input-sources xkb-options "['grp:win_space_toggle']"
 
 # install md-cli
 npm install -g markdownlint-cli
+
