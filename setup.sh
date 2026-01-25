@@ -73,3 +73,4 @@ gsettings set org.gnome.desktop.input-sources xkb-options "['grp:win_space_toggl
 npm install -g markdownlint-cli
 
 # temp
+sudo apt install mplayer mplayer-gui mpv
