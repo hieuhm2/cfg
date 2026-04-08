@@ -129,6 +129,7 @@ alias ze='/zserver/lib/zshort/common/ZShortEngine'
 # Middleware
 alias znm='/zserver/lib/zshort/mw/ZShortNotificationMW'
 alias zcm='/zserver/lib/zshort/mw/ZShortChannelMW/'
+alias zgm='/zserver/lib/zshort/mw/ZShortGroupMW/'
 
 # Service
 alias zis='/zserver/lib/zshort/service/ZShortInternalService'
@@ -174,3 +175,29 @@ unset __conda_setup
 
 # PAEA - start all services + ngrok + webhook
 alias paea="cd ~/PAEA && bash scripts/start.sh && cd"
+
+# pnpm
+export PNPM_HOME="/home/lap16759/.local/share/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end
+
+showbits() {
+  n=$1
+  bin=$(python3 -c "print(f'{int($n):064b}')")
+  grouped=$(echo "$bin" | sed 's/\(....\)/\1 /g')
+
+  echo "decimal : $n"
+  echo "binary  : $grouped"
+  echo
+
+  echo "bit idx :"
+  echo "$bin" | rev | awk '{
+    for(i=1;i<=length;i++){
+      if(substr($0,i,1)==1)
+        printf("bit %-2d = 1\n", i-1)
+    }
+  }'
+}
