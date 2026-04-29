@@ -71,6 +71,7 @@ zstyle ':omz:update' mode auto      # update automatically without asking
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(git zsh-autosuggestions)
+plugins+=(zsh-vi-mode)
 source $ZSH/oh-my-zsh.sh
 # User configuration
 
