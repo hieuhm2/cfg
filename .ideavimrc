@@ -3,3 +3,8 @@ set scrolloff=10
 
 set visualbell
 set noerrorbells
+
+nnoremap <leader>h :action MoveToolWindowTabLeft<CR>
+nnoremap <leader>l :action MoveToolWindowTabRight<CR>
+nnoremap <leader>e :action RecentFiles<CR>
+clipboard+=unnamedplus
