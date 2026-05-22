@@ -83,3 +83,7 @@ sudo apt install copyq
 # zsh-vi-mod
 git clone https://github.com/jeffreytse/zsh-vi-mode \
   $ZSH_CUSTOM/plugins/zsh-vi-mode
+
+# fd command
+apt install fd-find
+ln -s $(which fdfind) ~/.local/bin/fd

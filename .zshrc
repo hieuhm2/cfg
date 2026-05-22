@@ -1,4 +1,3 @@
-# If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:$HOME/.local/bin:/usr/local/bin:$PATH
 
 # Path to your Oh My Zsh installation.
@@ -71,7 +70,7 @@ zstyle ':omz:update' mode auto      # update automatically without asking
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(git zsh-autosuggestions)
-plugins+=(zsh-vi-mode)
+# plugins+=(zsh-vi-mode)
 source $ZSH/oh-my-zsh.sh
 # User configuration
 
@@ -202,3 +201,7 @@ showbits() {
     }
   }'
 }
+
+export PATH=$PATH:/usr/local/go/bin
+unset GTK_MODULES
+export PATH=$PATH:$HOME/.local/bin
