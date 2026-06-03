@@ -1,3 +1,4 @@
+# If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:$HOME/.local/bin:/usr/local/bin:$PATH
 
 # Path to your Oh My Zsh installation.
@@ -104,7 +105,6 @@ export EDITOR=nvim
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 alias lg="lazygit"
-alias gst="git status"
 
 alias cppwd='printf "%s" "$(pwd)" | xclip -selection clipboard -i'
 alias cp2cb='xclip -selection clipboard'
@@ -114,39 +114,7 @@ alias vpn='openvpn3 session-start --config ~/vng/profile-15481.ovpn'
 
 # Root
 alias z='/zserver/lib/zshort'
-
-# API
-alias za='/zserver/lib/zshort/api/ZShortAPI'
-alias zla='/zserver/lib/zshort/api/ZShortLogAPI'
-
-# Common
-alias zc='/zserver/lib/zshort/common'
-alias zcl='/zserver/lib/zshort/common/ZShortCommonLib'
-alias zcl2='/zserver/lib/zshort/common/ZShortCoreLib'
-alias zd='/zserver/lib/zshort/common/ZShortDAL'
-alias ze='/zserver/lib/zshort/common/ZShortEngine'
-
-# Middleware
-alias znm='/zserver/lib/zshort/mw/ZShortNotificationMW'
-alias zcm='/zserver/lib/zshort/mw/ZShortChannelMW/'
-alias zgm='/zserver/lib/zshort/mw/ZShortGroupMW/'
-
-# Service
-alias zis='/zserver/lib/zshort/service/ZShortInternalService'
-
-# Worker
-alias zw='/zserver/lib/zshort/worker'
-alias zwca='/zserver/lib/zshort/worker/ZShortCreatorAchievementWorker'
-alias zwn='/zserver/lib/zshort/worker/ZShortNotificationWorker'
-alias zwo='/zserver/lib/zshort/worker/ZShortOutAppNotificationWorker'
-alias zs2zidb='/zserver/lib/zshort/worker/ZShortSyncToZidbWorker'
-alias zs2sql='/zserver/lib/zshort/worker/ZShortSyncSqlWorker/'
-
-# Thrift
-alias zthrift='/zserver/lib/zshort/common/ZShortCommonLib/thrift/zshort'
-
-alias zls='alias | grep "^z"'
-alias ij='intellij-idea-ultimate'
+alias v='nvim'
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
@@ -156,6 +124,7 @@ export NVM_DIR="$HOME/.nvm"
 
 export PATH="$HOME/.npm-global/bin:$PATH"
 export PATH="$HOME/.local/bin:$PATH"
+export PATH="$HOME/scripts:$PATH"
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
