@@ -87,3 +87,7 @@ git clone https://github.com/jeffreytse/zsh-vi-mode \
 # fd command
 apt install fd-find
 ln -s $(which fdfind) ~/.local/bin/fd
+
+
+
+curl -fsSL https://raw.githubusercontent.com/rtk-ai/rtk/refs/heads/master/install.sh | sh
