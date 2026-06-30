@@ -153,22 +153,28 @@ case ":$PATH:" in
 esac
 # pnpm end
 
-showbits() {
-  n=$1
-  bin=$(python3 -c "print(f'{int($n):064b}')")
-  grouped=$(echo "$bin" | sed 's/\(....\)/\1 /g')
+showbits () {
+    n=$1
 
-  echo "decimal : $n"
-  echo "binary  : $grouped"
-  echo
+    bin=$(python3 - <<EOF
+n=int("$n")
+print(f"{n & ((1<<64)-1):064b}")
+EOF
+)
 
-  echo "bit idx :"
-  echo "$bin" | rev | awk '{
-    for(i=1;i<=length;i++){
-      if(substr($0,i,1)==1)
-        printf("bit %-2d = 1\n", i-1)
-    }
-  }'
+    grouped=$(echo "$bin" | sed 's/\(....\)/\1 /g')
+
+    echo "decimal : $n"
+    echo "binary  : $grouped"
+    echo
+    echo "bit idx :"
+
+    echo "$bin" | rev | awk '{
+        for(i=1;i<=length($0);i++){
+            if(substr($0,i,1)=="1")
+                printf("bit %-2d = 1\n", i-1)
+        }
+    }'
 }
 
 export PATH=$PATH:/usr/local/go/bin
