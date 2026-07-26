@@ -31,7 +31,7 @@ git clone https://github.com/nvim-lua/kickstart.nvim.git "${XDG_CONFIG_HOME:-$HO
 
 # zsh setup
 sudo apt-get install zsh -y
-sudo curl -L http://install.ohmyz.sh | sh
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 chsh -s $(which zsh)
 # logout and login again
 
