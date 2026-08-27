@@ -1,0 +1,82 @@
+{
+  "env": {
+    "CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS": "1"
+  },
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "rtk hook claude"
+          }
+        ]
+      }
+    ],
+    "Notification": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "notify-send 'Claude Code' 'Claude Code needs your attention'"
+          }
+        ]
+      }
+    ],
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash /zserver/lib/zshort/config/ZShortAIConfig/global/hooks/ensure-scan-secrets.sh"
+          }
+        ]
+      }
+    ]
+  },
+  "statusLine": {
+    "type": "command",
+    "command": "npx -y ccstatusline@latest",
+    "padding": 0
+  },
+  "enabledPlugins": {
+    "frontend-design@claude-plugins-official": true
+  },
+  "tui": "fullscreen",
+  "theme": "auto",
+  "teammateMode": "tmux",
+  "autoMode": {},
+  "claude_code": {
+    "permissions": {
+      "mode": "plan",
+      "deny": [
+        "Read(.env)",
+        "Read(/.env.*)",
+        "Read(/root/)",
+        "Read(/etc/)",
+        "Read(/secrets.json)",
+        "Read(/.ssh/)"
+      ]
+    },
+    "bash_deny_rules": [
+      {
+        "pattern": "curl.*\\|.*sh",
+        "reason": "Ngăn chặn trích xuất dữ liệu qua mạng"
+      },
+      {
+        "pattern": "rm -rf /|",
+        "reason": "Ngăn chặn lệnh xóa hệ thống"
+      }
+    ],
+    "sandboxing": {
+      "enabled": true,
+      "mode": "strict"
+    },
+    "telemetry": "off"
+  },
+  "preferences": {
+    "tmuxSplitPanes": true
+  }
+}
